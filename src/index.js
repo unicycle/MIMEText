@@ -202,11 +202,11 @@ MIMEMessage.prototype.asRaw = function asRaw() {
     lines.push("--" + this.boundaryMixed);
   }
 
+  // TODO: correctly add both as multipart/alternative
+  // https://kb.datamotion.com/?ht_kb=what-does-a-sample-mime-message-look-like
   if (this.htmlMessage) {
     lines.push(this.htmlMessage);
-  }
-
-  if (this.plainTextMessage) {
+  } else {
     lines.push(this.plainTextMessage);
   }
 
