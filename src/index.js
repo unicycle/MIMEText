@@ -173,7 +173,7 @@ MIMEMessage.prototype.setHtmlMessage = function setHtmlMessage(msg) {
   return msg;
 };
 
-MIMEMessage.prototype.setTextMessage = function setTextMessage(msg) {
+MIMEMessage.prototype.setPlainTextMessage = function setPlainTextMessage(msg) {
   if (!typekit.isString(msg)) {
     return undefined;
   }
@@ -235,11 +235,11 @@ MIMEMessage.prototype.genNewBoundary = function genNewBoundary() {
   return this.boundaryNumber.toString() + randomStr + this.timestamp.toString();
 };
 
-MIMEMessage.prototype.getMessage = function getHtmlMessage() {
+MIMEMessage.prototype.getHtmlMessage = function getHtmlMessage() {
   return this.htmlMessage;
 };
 
-MIMEMessage.prototype.getMessage = function getTextMessage() {
+MIMEMessage.prototype.getPlainTextMessage = function getPlainTextMessage() {
   return this.plainTextMessage;
 };
 
